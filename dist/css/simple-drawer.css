@@ -1,40 +1,7 @@
-/* c-fixrd-bar
+@charset 'utf-8';
+/* ---------------------------------------------------------
+ Component
 --------------------------------------------------------- */
-.c-fixed-bar{
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 700;
-	-webkit-transition: -webkit-transform .3s;
-	transition-property: box-shadow, transform;
-}
-
-.c-fixed-bar.is-open{
-	box-shadow: 0 0 15px rgba(0, 0, 0, .5);
-	-webkit-transition: -webkit-transform .3s;
-}
-
-.c-fixed-bar.is-slideout{
-	-webkit-transition: -webkit-transform .3s;
-	-webkit-transform: translate3d(0, -60px, 0);
-}
-
-.c-fixed-bar__icon{
-	position: absolute;
-	top: 50%;
-	margin-top: -15px;
-}
-
-.c-fixed-bar__icon.is-right{
-	right: 16px;
-}
-
-.c-fixed-bar__icon.is-left{
-	left: 16px;
-}
-
-
 /* drawer-btn
 --------------------------------------------------------- */
 .c-drawer-btn{
@@ -42,6 +9,7 @@
 	width: 30px;
 	height: 30px;
 }
+
 .c-drawer-btn__icon{
 	position: relative;
 	top: 14px;
@@ -53,6 +21,7 @@
 	background: #f4f4f4;
 	transition: background .5s;
 }
+
 .c-drawer-btn__icon:before
 ,.c-drawer-btn__icon:after{
 	position: absolute;
@@ -65,10 +34,12 @@
 	transition: all .3s !important;
 	transform: rotate(0deg);
 }
+
 .c-drawer-btn__icon:before{
 	-webkit-transform: translateY(8px);
 	        transform: translateY(8px);
 }
+
 .c-drawer-btn__icon:after{
 	-webkit-transform: translateY(-8px);
 	        transform: translateY(-8px);
@@ -77,10 +48,12 @@
 .is-open.c-drawer-btn .c-drawer-btn__icon{
 	background: #0b0718;
 }
+
 .is-open.c-drawer-btn .c-drawer-btn__icon:before{
 	-webkit-transform: translateY(0px) rotate(-45deg);
 	        transform: translateY(0px) rotate(-45deg);
 }
+
 .is-open.c-drawer-btn .c-drawer-btn__icon:after{
 	-webkit-transform: translateY(0px) rotate(45deg);
 	        transform: translateY(0px) rotate(45deg);
@@ -114,7 +87,6 @@
 	-webkit-transform: translate3d(0, 0, 0);
 	        transform: translate3d(0, 0, 0);
 }
-
 
 .c-drawer__inner{
 	overflow: scroll;
@@ -155,4 +127,40 @@
 .c-drawer__overlay.is-fadein{
 	display: block;
 	opacity: .6;
+}
+
+/* c-fixrd-bar
+--------------------------------------------------------- */
+.c-fixed-bar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 700;
+	width: 100%;
+	-webkit-transition: -webkit-transform .3s;
+	transition-property: box-shadow, transform;
+}
+
+.c-fixed-bar.is-open{
+	box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+	-webkit-transition: -webkit-transform .3s;
+}
+
+.c-fixed-bar.is-slideout{
+	-webkit-transition: -webkit-transform .3s;
+	-webkit-transform: translate3d(0, -60px, 0);
+}
+
+.c-fixed-bar__icon{
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+}
+
+.c-fixed-bar__icon.is-right{
+	right: 16px;
+}
+
+.c-fixed-bar__icon.is-left{
+	left: 16px;
 }
