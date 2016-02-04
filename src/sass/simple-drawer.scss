@@ -1,7 +1,205 @@
 /* ---------------------------------------------------------
- Component
+ Configs
 --------------------------------------------------------- */
 @import "configs";
-@import "drawer-btn";
-@import "drawer";
-@import "fixed-bar";
+
+/* ---------------------------------------------------------
+ drawer
+--------------------------------------------------------- */
+.simple-drawer{
+	position: fixed;
+	top: 0;
+	z-index: $drawer-z-index;
+	padding-top: $drawer-padding;
+	width: $drawer-size;
+	height: 100%;
+	background: $drawer-color;
+}
+
+
+/* drawer - side
+--------------------------------------------------------- */
+.simple-drawer.is-right{
+	right: 0;
+	-webkit-transition: -webkit-transform $animate-speed;
+	        transition:         transform $animate-speed;
+	transition-property: box-shadow, transform;
+	-webkit-transform: translate3d($drawer-size, 0, 0);
+	        transform: translate3d($drawer-size, 0, 0);
+}
+
+.simple-drawer.is-left{
+	left: -$drawer-size;
+	-webkit-transition: -webkit-transform $animate-speed;
+	        transition:         transform $animate-speed;
+	transition-property: box-shadow, transform;
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+}
+
+
+/* drawer - is-open
+--------------------------------------------------------- */
+.simple-drawer.is-open{
+	visibility: visible;
+	min-height: 667px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.simple-drawer.is-left.is-open{
+	-webkit-transition: -webkit-transform $animate-speed;
+	        transition:         transform $animate-speed;
+	-webkit-transform: translate3d($drawer-size, 0, 0);
+	        transform: translate3d($drawer-size, 0, 0);
+}
+
+.simple-drawer.is-right.is-open{
+	-webkit-transition: -webkit-transform $animate-speed;
+	        transition:         transform $animate-speed;
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+}
+
+
+
+/* drawer-inner
+--------------------------------------------------------- */
+.simple-drawer-inner{
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+
+
+/* drawer-overlay
+--------------------------------------------------------- */
+.simple-drawer-overlay{
+	position: fixed;
+	top: 0;
+	z-index: $overlay-z-index;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: $overlay-bg;
+	opacity: 0;
+}
+
+
+/* drawer-overlay - is-fadein
+--------------------------------------------------------- */
+.simple-drawer-verlay.is-fadein{
+	display: block;
+	opacity: .2;
+}
+
+
+/* ---------------------------------------------------------
+ drawer-btn
+--------------------------------------------------------- */
+.simple-drawer-btn{
+	display: block;
+	width: $hamburger-menu-size;
+	height: $hamburger-menu-size;
+	position: absolute;
+	top: 50%;
+	margin-top: -$hamburger-menu-position;
+}
+
+/* drawer-btn - is-right
+--------------------------------------------------------- */
+.simple-drawer-btn.is-right{
+	right: $hamburger-menu-position;
+}
+
+
+/* drawer-btn - is-left
+--------------------------------------------------------- */
+.simple-drawer-btn.is-left{
+	left: $hamburger-menu-position;
+}
+
+
+/* drawer-btn - icon
+--------------------------------------------------------- */
+.simple-drawer-btn__icon{
+	position: relative;
+	top: $hamburger-menu-position - 1;
+	left: 5px;
+	display: block;
+	width: $hamburger-bar-size;
+	height: $hamburger-line-thickness;
+	border-radius: 3px;
+	background: $hamburger-menu-color;
+	transition: background $animate-speed;
+}
+.simple-drawer-btn__icon:before
+,.simple-drawer-btn__icon:after{
+	position: absolute;
+	display: block;
+	width: $hamburger-bar-size;
+	height: $hamburger-line-thickness;
+	border-radius: 3px;
+	background: $hamburger-menu-color;
+	content: '';
+	transition: all $animate-speed !important;
+	transform: rotate(0deg);
+}
+.simple-drawer-btn__icon:before{
+	-webkit-transform: translateY($hamburger-menu-translate-y);
+	        transform: translateY($hamburger-menu-translate-y);
+}
+.simple-drawer-btn__icon:after{
+	-webkit-transform: translateY(-$hamburger-menu-translate-y);
+	        transform: translateY(-$hamburger-menu-translate-y);
+}
+
+
+
+/* drawer-btn - icon animation
+--------------------------------------------------------- */
+.is-open.simple-drawer-btn .simple-drawer-btn__icon{
+	background: $hamburger-menu-bg;
+}
+.is-open.simple-drawer-btn .simple-drawer-btn__icon:before{
+	-webkit-transform: translateY(0px) rotate(-45deg);
+	        transform: translateY(0px) rotate(-45deg);
+}
+.is-open.simple-drawer-btn .simple-drawer-btn__icon:after{
+	-webkit-transform: translateY(0px) rotate(45deg);
+	        transform: translateY(0px) rotate(45deg);
+}
+
+
+
+
+/* ---------------------------------------------------------
+ drawer-btn
+--------------------------------------------------------- */
+.simple-drawer-fixed-bar{
+	position: fixed;
+	width: 100%;
+	height: $fixed-bar-height;
+	line-height: $fixed-bar-height;
+	background: $fixed-bar-bg;
+	top: 0;
+	left: 0;
+	z-index: $fixed-bar-z-index;
+	-webkit-transition: -webkit-transform $animate-speed;
+	transition-property: box-shadow, transform;
+}
+
+
+/* c-fixrd-bar - is-open
+--------------------------------------------------------- */
+.simple-drawer-fixed-bar.is-open{
+	box-shadow: 0 0 16px rgba(0, 0, 0, .5);
+	-webkit-transition: -webkit-transform $animate-speed;
+}
+
+
+/* c-fixrd-bar - is-slideout
+--------------------------------------------------------- */
+.simple-drawer-fixed-bar.is-slideout{
+	-webkit-transition: -webkit-transform $animate-speed;
+	-webkit-transform: translate3d(0, -$fixed-bar-translate, 0);
+}

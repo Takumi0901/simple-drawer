@@ -20,11 +20,11 @@
     </style>
 </head>
 <body>
-    <div class="c-fixed-bar simple-drawer-fixed-bar">
+    <div class="simple-drawer-fixed-bar">
         <header role="banner" class="l-header">
             <h1 class="l-header__logo">simple-drawer</h1>
-            <span class="c-fixed-bar__icon c-drawer-btn simple-drawer-btn">
-                <i class="c-drawer-btn__icon"></i>
+            <span class="simple-drawer-btn">
+                <i class="simple-drawer-btn__icon"></i>
             </span>
         </header>
     </div>
@@ -53,16 +53,16 @@
 
 
 <p>html</p>
-<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;c-fixed-bar simple-drawer-fixed-bar&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;c-fixed-bar__icon c-drawer-btn simple-drawer-btn&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;c-drawer-btn__icon&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
+<div class="codehilite"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;simple-drawer-fixed-bar&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;simple-drawer-btn&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;simple-drawer-btn__icon&quot;</span><span class="nt">&gt;&lt;/i&gt;</span>
     <span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;l-wrapper simple-drawer-wrapper&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;main</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
         メインコンテンツ
     <span class="nt">&lt;/main&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;c-drawer simple-drawer&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;simple-drawer&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;simple-drawer-inner&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;aside</span> <span class="na">role=</span><span class="s">&quot;complementary&quot;</span><span class="nt">&gt;</span>
                 ドロワー
@@ -82,24 +82,7 @@
 
 <h2>オプション</h2>
 <p>主にJavaScript側ではクラスの命名とドロワーの向き、barの固定を設定しています</p>
-<div class="codehilite"><pre>btn             : &#39;.simple-drawer-btn&#39;,
-bar             : &#39;.simple-drawer-fixed-bar&#39;,
-drawer_inner    : &#39;.simple-drawer-inner&#39;,
-overlay         : &#39;.simple-drawer-overlay&#39;,
-wrapper         : &#39;.simple-drawer-wrapper&#39;,
-btnside         : &#39;left&#39;,
-drawerside      : &#39;left&#39;,
-fixed           : true
-</pre></div>
-
-
-<p>btn,bar,drawer_inner,overlay,wrapperについては、クラス名をつけています。命名については自分で好きに書き換えることができるようにしました。</p>
 <div class="codehilite"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.simple-drawer&quot;</span><span class="p">).</span><span class="nx">simpleDrawer</span><span class="p">({</span>
-    <span class="nx">btn</span>             <span class="o">:</span> <span class="s1">&#39;.btn&#39;</span><span class="p">,</span>
-    <span class="nx">bar</span>             <span class="o">:</span> <span class="s1">&#39;.fixed-bar&#39;</span><span class="p">,</span>
-    <span class="nx">drawer_inner</span>    <span class="o">:</span> <span class="s1">&#39;.inner&#39;</span><span class="p">,</span>
-    <span class="nx">overlay</span>         <span class="o">:</span> <span class="s1">&#39;.overlay&#39;</span><span class="p">,</span>
-    <span class="nx">wrapper</span>         <span class="o">:</span> <span class="s1">&#39;.wrapper&#39;</span><span class="p">,</span>
     <span class="nx">btnside</span>         <span class="o">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="c1">// left or right</span>
     <span class="nx">drawerside</span>      <span class="o">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="c1">// left or right</span>
     <span class="nx">fixed</span>           <span class="o">:</span> <span class="kc">true</span> <span class="c1">// true or false</span>
@@ -134,8 +117,8 @@ fixed           : true
         </article>
       </div>
         </main>
-        <div class="c-drawer simple-drawer">
-            <div class="simple-drawer-inner c-drawer__inner">
+        <div class="simple-drawer">
+            <div class="simple-drawer-inner">
                 <aside role="complementary">
                     <ul class="c-menu c-menu--border">
                         <li class="c-menu__item">

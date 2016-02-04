@@ -11,14 +11,21 @@
 		 * [defaults デフォルト設定]
 		 */
 	    this.defaults = {
+	        btnside 		: 'left',
+	        drawerside 		: 'left',
+	        fixed 			: true
+	    };
+
+
+	    /**
+	     * [elements クラスセレクタ定義]
+	     */
+	    this.elements = {
 	    	btn 			: '.simple-drawer-btn',
 	    	bar 			: '.simple-drawer-fixed-bar',
 	    	drawer_inner 	: '.simple-drawer-inner',
 	    	overlay 		: '.simple-drawer-overlay',
-	    	wrapper 		: '.simple-drawer-wrapper',
-	        btnside 		: 'left',
-	        drawerside 		: 'left',
-	        fixed 			: true
+	    	wrapper 		: '.simple-drawer-wrapper'
 	    };
 
 
@@ -44,8 +51,8 @@
 		 */
         initialize : function(el){
         	this.$el = $(el);
-        	this.$btn = $(this.setting.btn);
-        	this.$fixed_bar = $(this.setting.bar);
+        	this.$btn = $(this.elements.btn);
+        	this.$fixed_bar = $(this.elements.bar);
         	this.$window = $(window);
 
         	this.start_pos = 0;
@@ -116,7 +123,7 @@
 		 * [drawerInnerHeight ドロワー内スクロール用の高さを算出]
 		 */
 		drawerInnerHeight: function(){
-		    var $target = this.$el.children(this.setting.drawer_inner);
+		    var $target = this.$el.children(this.elements.drawer_inner);
 		    var $target_height = $target.height();
 		    var $window_height = $(window).height();
 
@@ -130,13 +137,13 @@
 		 * [drawerPartsAppend オーバーレイ追加]
 		 */
 		drawerPartsAppend: function(){
-			var overlaySlice = this.setting.overlay.substr(1);
+			var overlaySlice = this.elements.overlay.substr(1);
         	this.$overlayParts = '<div class="' + overlaySlice + ' c-drawer__overlay"></div>';
 
-		    if($(this.setting.overlay).length <= 0){
+		    if($(this.elements.overlay).length <= 0){
 		        $('body').append(this.$overlayParts);
 		    }
-		    this.$overlay = $(this.setting.overlay);
+		    this.$overlay = $(this.elements.overlay);
 		},
 
 
@@ -154,7 +161,7 @@
 		 * [wrapperScrollOn メインコンテンツのスクロールを禁止解除 SP]
 		 */
 		wrapperScrollOn: function(){
-		    $(this.setting.wrapper).off('.noScroll');
+		    $(this.elements.wrapper).off('.noScroll');
 		},
 
 

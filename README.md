@@ -25,16 +25,16 @@ bodyの終了タグの前
 html
 
 ``` html
-<div class="c-fixed-bar simple-drawer-fixed-bar">
-    <span class="c-fixed-bar__icon c-drawer-btn simple-drawer-btn">
-        <i class="c-drawer-btn__icon"></i>
+<div class="simple-drawer-fixed-bar">
+    <span class="simple-drawer-btn">
+        <i class="simple-drawer-btn__icon"></i>
     </span>
 </div>
 <div class="l-wrapper simple-drawer-wrapper">
     <main role="main">
         メインコンテンツ
     </main>
-    <div class="c-drawer simple-drawer">
+    <div class="simple-drawer">
         <div class="simple-drawer-inner">
             <aside role="complementary">
                 ドロワー
@@ -58,26 +58,8 @@ jQuery(document).ready(function($){
 
 主にJavaScript側ではクラスの命名とドロワーの向き、barの固定を設定しています
 
-```
-btn 			: '.simple-drawer-btn',
-bar 			: '.simple-drawer-fixed-bar',
-drawer_inner 	: '.simple-drawer-inner',
-overlay 		: '.simple-drawer-overlay',
-wrapper 		: '.simple-drawer-wrapper',
-btnside 		: 'left',
-drawerside 		: 'left',
-fixed 			: true
-```
-
-btn,bar,drawer_inner,overlay,wrapperについては、クラス名をつけています。命名については自分で好きに書き換えることができるようにしました。
-
 ``` js
 $(".simple-drawer").simpleDrawer({
-    btn 			: '.btn',
-	bar 			: '.fixed-bar',
-	drawer_inner 	: '.inner',
-	overlay 		: '.overlay',
-	wrapper 		: '.wrapper',
 	btnside 		: 'left', // left or right
 	drawerside 		: 'left', // left or right
 	fixed 			: true // true or false
