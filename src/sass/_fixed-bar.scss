@@ -3,33 +3,36 @@
 .c-fixed-bar{
 	position: fixed;
 	width: 100%;
+	height: $fixed-bar-height;
+	line-height: $fixed-bar-height;
+	background: $fixed-bar-bg;
 	top: 0;
 	left: 0;
-	z-index: 700;
-	-webkit-transition: -webkit-transform .3s;
+	z-index: $fixed-bar-z-index;
+	-webkit-transition: -webkit-transform $animate-speed;
 	transition-property: box-shadow, transform;
 }
 
 .c-fixed-bar.is-open{
-	box-shadow: 0 0 15px rgba(0, 0, 0, .5);
-	-webkit-transition: -webkit-transform .3s;
+	box-shadow: 0 0 16px rgba(0, 0, 0, .5);
+	-webkit-transition: -webkit-transform $animate-speed;
 }
 
 .c-fixed-bar.is-slideout{
-	-webkit-transition: -webkit-transform .3s;
-	-webkit-transform: translate3d(0, -60px, 0);
+	-webkit-transition: -webkit-transform $animate-speed;
+	-webkit-transform: translate3d(0, -$fixed-bar-translate, 0);
 }
 
 .c-fixed-bar__icon{
 	position: absolute;
 	top: 50%;
-	margin-top: -15px;
+	margin-top: -$hamburger-menu-position;
 }
 
 .c-fixed-bar__icon.is-right{
-	right: 16px;
+	right: $hamburger-menu-position;
 }
 
 .c-fixed-bar__icon.is-left{
-	left: 16px;
+	left: $hamburger-menu-position;
 }

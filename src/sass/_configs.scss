@@ -1,0 +1,79 @@
+// ---------------------------------------------------------------
+//	Configs - options
+// ---------------------------------------------------------------
+
+// Base
+$base-size						: 8px;
+$base-width						: 320px;
+
+// Color
+$color-base 					: #9265cf;
+$color-primary 					: #f4f4f4;
+$color-secondary 				: #212121;
+$color-overlay 					: #000;
+
+// z-index
+$z-index-base					: 1000;
+
+// animation
+$animate-speed					: .3s;
+
+// fixed-bar
+$fixed-bar-height				: 44px;
+
+// hamburger
+$hamburger-line-thickness		: 1px;
+
+
+
+
+// ---------------------------------------------------------------
+//	hamburger-menu
+// ---------------------------------------------------------------
+
+// Color
+$hamburger-menu-color			: $color-primary;
+$hamburger-menu-bg				: $color-base;
+
+// Size
+$hamburger-menu-size			: $base-size * 4;
+$hamburger-bar-size				: $base-size * 3;
+
+// animation / position
+$hamburger-menu-translate-y		: $base-size;
+$hamburger-menu-position		: $base-size * 2;
+
+
+// ---------------------------------------------------------------
+//	drawer
+// ---------------------------------------------------------------
+
+// Size
+$drawer-size					: $base-width;
+
+// Color
+$drawer-color					: $color-secondary;
+
+// z-index
+$drawer-z-index					: $z-index-base - 100;
+$overlay-z-index				: $z-index-base - 200;
+
+// padding
+$drawer-padding					: $fixed-bar-height + $base-size * 2;
+
+// overlay
+$overlay-bg						: $color-overlay;
+
+
+// ---------------------------------------------------------------
+//	fixed-bar
+// ---------------------------------------------------------------
+
+// Color
+$fixed-bar-bg					: $color-base;
+
+// z-index
+$fixed-bar-z-index				: $z-index-base;
+
+// animarion
+$fixed-bar-translate			: $fixed-bar-height + $base-size * 2;

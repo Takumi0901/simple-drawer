@@ -303,19 +303,10 @@ input[type='radio']{
 /* l-header
 --------------------------------------------------------- */
 .l-header{
-	height: 44px;
-	line-height: 44px;
-	background: #0b0718;
+	
 }
 
 .l-header__logo{
 	text-align: center;
 	color: #f4f4f4;
-}
-
-
-/* l-sidebar
---------------------------------------------------------- */
-.l-sidebar{
-	background: #2c3e50;
 }

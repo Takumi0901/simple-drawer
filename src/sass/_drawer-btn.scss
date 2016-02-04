@@ -2,43 +2,43 @@
 --------------------------------------------------------- */
 .c-drawer-btn{
 	display: block;
-	width: 30px;
-	height: 30px;
+	width: $hamburger-menu-size;
+	height: $hamburger-menu-size;
 }
 .c-drawer-btn__icon{
 	position: relative;
-	top: 14px;
+	top: $hamburger-menu-position - 1;
 	left: 5px;
 	display: block;
-	width: 20px;
-	height: 1px;
+	width: $hamburger-bar-size;
+	height: $hamburger-line-thickness;
 	border-radius: 3px;
-	background: #f4f4f4;
-	transition: background .5s;
+	background: $hamburger-menu-color;
+	transition: background $animate-speed;
 }
 .c-drawer-btn__icon:before
 ,.c-drawer-btn__icon:after{
 	position: absolute;
 	display: block;
-	width: 20px;
-	height: 1px;
+	width: $hamburger-bar-size;
+	height: $hamburger-line-thickness;
 	border-radius: 3px;
-	background: #f4f4f4;
+	background: $hamburger-menu-color;
 	content: '';
-	transition: all .3s !important;
+	transition: all $animate-speed !important;
 	transform: rotate(0deg);
 }
 .c-drawer-btn__icon:before{
-	-webkit-transform: translateY(8px);
-	        transform: translateY(8px);
+	-webkit-transform: translateY($hamburger-menu-translate-y);
+	        transform: translateY($hamburger-menu-translate-y);
 }
 .c-drawer-btn__icon:after{
-	-webkit-transform: translateY(-8px);
-	        transform: translateY(-8px);
+	-webkit-transform: translateY(-$hamburger-menu-translate-y);
+	        transform: translateY(-$hamburger-menu-translate-y);
 }
 
 .is-open.c-drawer-btn .c-drawer-btn__icon{
-	background: #0b0718;
+	background: $hamburger-menu-bg;
 }
 .is-open.c-drawer-btn .c-drawer-btn__icon:before{
 	-webkit-transform: translateY(0px) rotate(-45deg);

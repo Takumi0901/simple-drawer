@@ -6,27 +6,27 @@
 --------------------------------------------------------- */
 .c-drawer-btn{
 	display: block;
-	width: 30px;
-	height: 30px;
+	width: 32px;
+	height: 32px;
 }
 
 .c-drawer-btn__icon{
 	position: relative;
-	top: 14px;
+	top: 15px;
 	left: 5px;
 	display: block;
-	width: 20px;
+	width: 24px;
 	height: 1px;
 	border-radius: 3px;
 	background: #f4f4f4;
-	transition: background .5s;
+	transition: background .3s;
 }
 
 .c-drawer-btn__icon:before
 ,.c-drawer-btn__icon:after{
 	position: absolute;
 	display: block;
-	width: 20px;
+	width: 24px;
 	height: 1px;
 	border-radius: 3px;
 	background: #f4f4f4;
@@ -46,7 +46,7 @@
 }
 
 .is-open.c-drawer-btn .c-drawer-btn__icon{
-	background: #0b0718;
+	background: #9265cf;
 }
 
 .is-open.c-drawer-btn .c-drawer-btn__icon:before{
@@ -64,10 +64,11 @@
 .c-drawer{
 	position: fixed;
 	top: 0;
-	z-index: 600;
-	padding-top: 64px;
+	z-index: 900;
+	padding-top: 60px;
 	width: 320px;
 	height: 100%;
+	background: #212121;
 }
 
 .c-drawer.is-right{
@@ -116,7 +117,7 @@
 .c-drawer__overlay{
 	position: fixed;
 	top: 0;
-	z-index: 500;
+	z-index: 800;
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -126,7 +127,7 @@
 
 .c-drawer__overlay.is-fadein{
 	display: block;
-	opacity: .6;
+	opacity: .2;
 }
 
 /* c-fixrd-bar
@@ -135,14 +136,17 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 700;
+	z-index: 1000;
 	width: 100%;
+	height: 44px;
+	background: #9265cf;
+	line-height: 44px;
 	-webkit-transition: -webkit-transform .3s;
 	transition-property: box-shadow, transform;
 }
 
 .c-fixed-bar.is-open{
-	box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+	box-shadow: 0 0 16px rgba(0, 0, 0, .5);
 	-webkit-transition: -webkit-transform .3s;
 }
 
@@ -154,7 +158,7 @@
 .c-fixed-bar__icon{
 	position: absolute;
 	top: 50%;
-	margin-top: -15px;
+	margin-top: -16px;
 }
 
 .c-fixed-bar__icon.is-right{
