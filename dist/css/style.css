@@ -309,4 +309,60 @@ input[type='radio']{
 .l-header__logo{
 	text-align: center;
 	color: #f4f4f4;
+	font-size: 16px !important;
+}
+
+
+/* l-footer
+--------------------------------------------------------- */
+.l-footer{
+	border-top: 1px #e8e8e8 solid;
+	padding: 16px;
+	text-align: center;
+	color: #e4e4e4;
+}
+
+/* menu
+--------------------------------------------------------- */
+.menu{
+	list-style: none;
+}
+.c-menu__item{
+	list-style: none;
+	border-top: solid 1px #414141;
+}
+
+.c-menu__item .c-menu__item__block-link{
+	position: relative;
+	display: block;
+	padding: 16px;
+	color: #f4f4f4;
+	text-decoration: none;
+}
+.c-menu__item .c-menu__item__block-link:link
+,.c-menu__item .c-menu__item__block-link:visited
+,.c-menu__item .c-menu__item__block-link:active{
+	text-decoration: none;
+}
+.c-menu__item .c-menu__item__block-link:hover{
+	color: #f4f4f4;
+	background: #313131;
+	text-decoration: none;
+}
+
+.c-menu--border .c-menu__item:last-child{
+	border-bottom: solid 1px #414141;
+}
+
+
+/* style
+--------------------------------------------------------- */
+body{
+	min-width: auto !important;
+}
+.container{
+	width: 90% !important;
+}
+#markup article{
+	padding: 0 !important;
 }
