@@ -1,6 +1,15 @@
 (function($) {
 
+	/**
+	 * [simpleDrawer]
+	 * @param  {[type]} el     [drawer オブジェクト]
+	 * @param  {[type]} option [プラグイン呼び出し時のオプション]
+	 */
 	$.simpleDrawer = function(el, option){
+
+		/**
+		 * [defaults デフォルト設定]
+		 */
 	    this.defaults = {
 	    	btn 			: '.simple-drawer-btn',
 	    	bar 			: '.simple-drawer-fixed-bar',
@@ -11,6 +20,11 @@
 	        drawerside 		: 'left',
 	        fixed 			: true
 	    };
+
+
+	    /**
+	     * [setting this.defaultsをoptionで上書き]
+	     */
 	    this.setting = $.extend(this.defaults, option);
 
 	    this.initialize(el);
@@ -22,6 +36,12 @@
 		
 	}
 	$.extend($.simpleDrawer.prototype,{
+		
+
+		/**
+		 * [initialize 初期化]
+		 * @param  {[type]} el [drawer オブジェクト]
+		 */
         initialize : function(el){
         	this.$el = $(el);
         	this.$btn = $(this.setting.btn);
@@ -36,6 +56,10 @@
         	this.drawerPartsAppend();
         },
 
+
+        /**
+         * [handleEvents タッチイベント]
+         */
         handleEvents: function(){
         	var self = this;
 		    this.$btn.on('touchstart click', function(){
@@ -55,6 +79,11 @@
 				return false;
 		    });		    	
         },
+
+
+        /**
+         * [drawerSlideOpen ドロワーを開く]
+         */
         drawerSlideOpen: function(){
 	        this.$el.addClass('is-open');
 	        this.$btn.addClass('is-open');
@@ -64,6 +93,10 @@
 		    return false;
 		},
 
+
+		/**
+		 * [drawerSlideClose ドロワーを閉じる]
+		 */
 		drawerSlideClose: function(){
 		    var self = this;
 
@@ -79,6 +112,9 @@
 		},
 
 
+		/**
+		 * [drawerInnerHeight ドロワー内スクロール用の高さを算出]
+		 */
 		drawerInnerHeight: function(){
 		    var $target = this.$el.children(this.setting.drawer_inner);
 		    var $target_height = $target.height();
@@ -89,6 +125,10 @@
 		    }
 		},
 		
+
+		/**
+		 * [drawerPartsAppend オーバーレイ追加]
+		 */
 		drawerPartsAppend: function(){
 			var overlaySlice = this.setting.overlay.substr(1);
         	this.$overlayParts = '<div class="' + overlaySlice + ' c-drawer__overlay"></div>';
@@ -99,16 +139,28 @@
 		    this.$overlay = $(this.setting.overlay);
 		},
 
+
+		/**
+		 * [wrapperScrollOff メインコンテンツのスクロールを禁止 SP]
+		 */
 		wrapperScrollOff: function(){
 		    $(this.setting.wrapper).on('touchmove.noScroll', function(e) {
 		        e.preventDefault();
 		    });
 		},
 
+
+		/**
+		 * [wrapperScrollOn メインコンテンツのスクロールを禁止解除 SP]
+		 */
 		wrapperScrollOn: function(){
 		    $(this.setting.wrapper).off('.noScroll');
 		},
 
+
+		/**
+		 * [elementBtnSide settingのbtnsideの判定]
+		 */
 		elementBtnSide: function(){
 			if(this.setting.btnside == 'left'){
 		    	this.$btn.addClass('is-left');
@@ -123,6 +175,10 @@
 		    }
 		},
 
+
+		/**
+		 * [elementDrawerSide settingのdrawersideの判定]
+		 */
 		elementDrawerSide: function(){
 			if(this.setting.drawerside == 'left'){
 		    	this.$el.addClass('is-left');
@@ -138,6 +194,9 @@
 		},
 
 
+		/**
+		 * [fixedBarOnScroll fixed-barのスクロール判定]
+		 */
 		fixedBarOnScroll: function(){
 		    var self = this;
 		    var _touch = ('ontouchstart' in document) ? 'touchmove' : 'scroll';
@@ -161,14 +220,29 @@
 		    });
 		},
 
+
+		/**
+		 * [fixedBarSlideIn fixed-bar スライドイン]
+		 */
 		fixedBarSlideIn: function(){
 		    this.$fixed_bar.removeClass('is-slideout');
 		},
 
+
+
+		/**
+		 * [fixedBarSlideOut fixed-bar スライドアウト]
+		 */
 		fixedBarSlideOut: function(){
 		    this.$fixed_bar.addClass('is-slideout');
 		}
     });
+
+	
+	/**
+	 * [simpleDrawer]
+	 * @param  {[type]} option [プラグイン呼び出し時のオプション]
+	 */
 	$.fn.simpleDrawer = function(option) {
         return this.each(function() {
             new $.simpleDrawer(this, option);
