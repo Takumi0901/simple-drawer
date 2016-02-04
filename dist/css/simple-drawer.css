@@ -10,7 +10,7 @@
 	top: 0;
 	z-index: 900;
 	padding-top: 60px;
-	width: 320px;
+	width: 280px;
 	height: 100%;
 	background: #212121;
 }
@@ -22,12 +22,12 @@
 	-webkit-transition: -webkit-transform .3s;
 	        transition:         transform .3s;
 	transition-property: box-shadow, transform;
-	-webkit-transform: translate3d(320px, 0, 0);
-	        transform: translate3d(320px, 0, 0);
+	-webkit-transform: translate3d(280px, 0, 0);
+	        transform: translate3d(280px, 0, 0);
 }
 
 .simple-drawer.is-left{
-	left: -320px;
+	left: -280px;
 	-webkit-transition: -webkit-transform .3s;
 	        transition:         transform .3s;
 	transition-property: box-shadow, transform;
@@ -46,8 +46,8 @@
 .simple-drawer.is-left.is-open{
 	-webkit-transition: -webkit-transform .3s;
 	        transition:         transform .3s;
-	-webkit-transform: translate3d(320px, 0, 0);
-	        transform: translate3d(320px, 0, 0);
+	-webkit-transform: translate3d(280px, 0, 0);
+	        transform: translate3d(280px, 0, 0);
 }
 
 .simple-drawer.is-right.is-open{
