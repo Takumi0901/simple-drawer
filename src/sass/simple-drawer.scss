@@ -20,12 +20,12 @@
 /* drawer - side
 --------------------------------------------------------- */
 .simple-drawer.is-right{
-	right: 0;
+	right: -$drawer-size;
 	-webkit-transition: -webkit-transform $animate-speed;
 	        transition:         transform $animate-speed;
 	transition-property: box-shadow, transform;
-	-webkit-transform: translate3d($drawer-size, 0, 0);
-	        transform: translate3d($drawer-size, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
 }
 
 .simple-drawer.is-left{
@@ -56,8 +56,8 @@
 .simple-drawer.is-right.is-open{
 	-webkit-transition: -webkit-transform $animate-speed;
 	        transition:         transform $animate-speed;
-	-webkit-transform: translate3d(0, 0, 0);
-	        transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(-$drawer-size, 0, 0);
+	        transform: translate3d(-$drawer-size, 0, 0);
 }
 
 

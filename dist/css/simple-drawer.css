@@ -18,12 +18,12 @@
 /* drawer - side
 --------------------------------------------------------- */
 .simple-drawer.is-right{
-	right: 0;
+	right: -280px;
 	-webkit-transition: -webkit-transform .3s;
 	        transition:         transform .3s;
 	transition-property: box-shadow, transform;
-	-webkit-transform: translate3d(280px, 0, 0);
-	        transform: translate3d(280px, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
 }
 
 .simple-drawer.is-left{
@@ -53,8 +53,8 @@
 .simple-drawer.is-right.is-open{
 	-webkit-transition: -webkit-transform .3s;
 	        transition:         transform .3s;
-	-webkit-transform: translate3d(0, 0, 0);
-	        transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(-280px, 0, 0);
+	        transform: translate3d(-280px, 0, 0);
 }
 
 /* drawer-inner
