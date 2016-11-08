@@ -73,10 +73,8 @@
 				this.$btn.on(_touch, function(){
 					if(self.$el.hasClass('is-open')){
 								self.drawerSlideClose();
-								self.wrapperScrollOff();
 						}else{
 								self.drawerSlideOpen();
-								self.wrapperScrollOn();
 						}
 						return false;
 				});
@@ -97,6 +95,7 @@
 					this.$btn.addClass('is-open');
 					this.$overlay.addClass('is-fadein');
 					this.$fixed_bar.addClass('is-open');
+					this.wrapperScrollOff();
 
 				return false;
 		},
@@ -111,6 +110,7 @@
 				this.$el.removeClass('is-open');
 				this.$btn.removeClass('is-open');
 				this.$overlay.removeClass('is-fadein');
+				this.wrapperScrollOn();
 
 				setTimeout(function(){
 						self.$fixed_bar.removeClass('is-open');
@@ -152,9 +152,8 @@
 		 * [wrapperScrollOff メインコンテンツのスクロールを禁止 SP]
 		 */
 		wrapperScrollOff: function(){
-				$(this.setting.wrapper).on('touchmove.noScroll', function(e) {
-						e.preventDefault();
-				});
+			this.scrollpos = $(window).scrollTop();
+      $(this.elements.wrapper).addClass('is-fixed').css({'top': -this.scrollpos});
 		},
 
 
@@ -162,7 +161,8 @@
 		 * [wrapperScrollOn メインコンテンツのスクロールを禁止解除 SP]
 		 */
 		wrapperScrollOn: function(){
-				$(this.elements.wrapper).off('.noScroll');
+			$(this.elements.wrapper).removeClass('is-fixed').css({'top': 0});
+			window.scrollTo( 0 , this.scrollpos );
 		},
 
 
